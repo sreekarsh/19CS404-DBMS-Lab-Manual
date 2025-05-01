@@ -105,123 +105,213 @@ CREATE TABLE Table_Name (
 
 **Question 1**
 --
--- Paste Question 1 here
+Create a table named Orders with the following constraints:
+OrderID as INTEGER should be the primary key.
+OrderDate as DATE should be not NULL.
+CustomerID as INTEGER should be a foreign key referencing Customers(CustomerID).
 
-```sql
--- Paste your SQL code below for Question 1
+
+
 ```
+CREATE TABLE Orders(OrderID INTEGER PRIMARY KEY,OrderDate DATE NOT NULL,CustomerID INTEGER, FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID));
+
+```
+
 
 **Output:**
 
-![Output1](output.png)
+![image](https://github.com/user-attachments/assets/7986dd47-7996-481f-9783-b7d3b953f141)
+
 
 **Question 2**
 ---
--- Paste Question 2 here
+Write a SQL query to add birth_date attribute as timestamp (datatype) in the table customer 
+
+Sample table: customer
+
+ customer_id |   cust_name    |    city    | grade | salesman_id 
+-------------+----------------+------------+-------+-------------
+        3002 | Nick Rimando   | New York   |   100 |        5001
+        3007 | Brad Davis     | New York   |   200 |        5001
+        3005 | Graham Zusi    | California |   200 |        5002
 
 ```sql
--- Paste your SQL code below for Question 2
+ ALTER TABLE Customer ADD COLUMN birth_date timestamp;
 ```
 
 **Output:**
 
-![Output2](output.png)
+![image](https://github.com/user-attachments/assets/1a6aff6e-8bd5-4ebb-b54b-43dce631b128)
+
 
 **Question 3**
 ---
--- Paste Question 3 here
+Create a table named Invoices with the following constraints:
+InvoiceID as INTEGER should be the primary key.
+InvoiceDate as DATE.
+Amount as REAL should be greater than 0.
+DueDate as DATE should be greater than the InvoiceDate.
+OrderID as INTEGER should be a foreign key referencing Orders(OrderID).
 
-```sql
--- Paste your SQL code below for Question 3
+
+```
+CREATE TABLE Invoices(InvoiceID INTEGER PRIMARY KEY,InvoiceDate DATE,Amount REAL CHECK(Amount>0),DueDate DATE CHECK(DueDate>InvoiceDate),
+OrderID INTEGER, FOREIGN KEY(OrderID) REFERENCES Orders(OrderID));
+
 ```
 
 **Output:**
 
-![Output3](output.png)
+![image](https://github.com/user-attachments/assets/a40d3a53-5b22-436d-81ae-34f409d0a48b)
+
 
 **Question 4**
 ---
--- Paste Question 4 here
+Insert a book with ISBN 978-1234567890, Title Data Science Essentials, Author Jane Doe, Publisher TechBooks, and Year 2024 into the Books table.
+
+For example:
+
+Test	Result
+SELECT * FROM Books;
+ISBN            Title                    Author      Publisher   Year
+--------------  -----------------------  ----------  ----------  ----------
+978-1234567890  Data Science Essentials  Jane Doe    TechBooks   2024
 
 ```sql
--- Paste your SQL code below for Question 4
+
+INSERT INTO Books(ISBN,Title,Author,Publisher,Year) values ( '978-1234567890',
+'Data Science Essentials','Jane Doe','TechBooks',2024);
+
 ```
 
 **Output:**
 
-![Output4](output.png)
+![image](https://github.com/user-attachments/assets/fabf5756-f7c7-4be0-a646-860c0ea5a723)
+
 
 **Question 5**
 ---
--- Paste Question 5 here
+Write a SQL query for adding a new column named "email" with the datatype VARCHAR(100) to the  table "customer" 
+
+Sample table: customer
+
+ customer_id |   cust_name    |    city    | grade | salesman_id 
+-------------+----------------+------------+-------+-------------
+        3002 | Nick Rimando   | New York   |   100 |        5001
+        3007 | Brad Davis     | New York   |   200 |        5001
+        3005 | Graham Zusi    | California |   200 |        5002
 
 ```sql
--- Paste your SQL code below for Question 5
+
+ALTER TABLE Customer ADD COLUMN email VARCHAR(100);
 ```
 
 **Output:**
 
-![Output5](output.png)
+![image](https://github.com/user-attachments/assets/d56e70f4-284e-472d-9d1e-3ed216a16ba8)
+
 
 **Question 6**
 ---
--- Paste Question 6 here
+create a table named jobs including columns job_id, job_title, min_salary and max_salary, and make sure that, the default value for job_title is blank and min_salary is 8000 and max_salary is NULL will be entered automatically at the time of insertion if no value assigned for the specified columns.
 
 ```sql
--- Paste your SQL code below for Question 6
+CREATE TABLE jobs(job_id INTEGER,job_title VARCHAR(50) ,min_salary INTEGER DEFAULT 8000 ,max_salary NULL);
+
 ```
 
 **Output:**
 
-![Output6](output.png)
+![image](https://github.com/user-attachments/assets/0431eec9-745d-44dc-9ae3-0c6655a6a847)
 
 **Question 7**
 ---
--- Paste Question 7 here
+Insert all students from Archived_students table into the Student_details table.
+
+cid         name        type        notnull     dflt_value  pk
+----------  ----------  ----------  ----------  ----------  ----------
+0           RollNo      INT           0                       1
+1           Name        VARCHAR(100)  0                       0
+2           Gender      VARCHAR(10)   0                       0
+3           Subject     VARCHAR(50)   0                       0
+4           MARKS       INT           0                       0
+For example:
+
+Test	Result
+select * from student_details;
+RollNo      Name           Gender      Subject     MARKS
+----------  -------------  ----------  ----------  ----------
+1           Alice Johnson  Female      Math        85
+2           Bob Smith      Male        Science     90
+3           Charlie Brown  Male        English     78
+
 
 ```sql
--- Paste your SQL code below for Question 7
+INSERT INTO Student_details(RollNo,Name,Gender,Subject,MARKS)
+SELECT RollNo,Name,Gender,Subject,MARKS FROM Archived_students;
+
 ```
 
 **Output:**
 
-![Output7](output.png)
+![image](https://github.com/user-attachments/assets/cdcaef0b-2e24-4f3e-81b1-dd599360a1ca)
+
 
 **Question 8**
----
--- Paste Question 8 here
+---Create a table named Members with the following columns:
+
+MemberID as INTEGER
+MemberName as TEXT
+JoinDate as DATE
 
 ```sql
--- Paste your SQL code below for Question 8
+CREATE TABLE Members(MemberID INTEGER,MemberName TEXT,JoinDate DATE);
+
 ```
 
 **Output:**
 
-![Output8](output.png)
+![image](https://github.com/user-attachments/assets/135b0c44-75bf-4292-85af-6a0fbccaf398)
+
 
 **Question 9**
 ---
--- Paste Question 9 here
+Insert the following customers into the Customers table:
 
-```sql
--- Paste your SQL code below for Question 9
+CustomerID  Name         Address     City        ZipCode
+----------  -----------  ----------  ----------  ----------
+302         Laura Croft  456 Elm St  Seattle     98101
+303         Bruce Wayne  789 Oak St  Gotham      10001
+
+
+```sq
+lINSERT INTO Customers(CustomerID,Name,Address,City,Zipcode)values(302,'Laura Croft','456 Elm St','Seattle',98101);
+INSERT INTO Customers(CustomerID,Name,Address,City,Zipcode)values(303,'Bruce Wayne','789 Oak St','Gotham',10001);
 ```
 
 **Output:**
 
-![Output9](output.png)
+![image](https://github.com/user-attachments/assets/3c324482-7000-4ab8-88e7-42aabeb9d729)
+
 
 **Question 10**
 ---
--- Paste Question 10 here
+Create a table named Bonuses with the following constraints:
+BonusID as INTEGER should be the primary key.
+EmployeeID as INTEGER should be a foreign key referencing Employees(EmployeeID).
+BonusAmount as REAL should be greater than 0.
+BonusDate as DATE.
+Reason as TEXT should not be NULL.
 
 ```sql
--- Paste your SQL code below for Question 10
+CREATE TABLE Bonuses(BonusID INTEGER PRIMARY KEY,EmployeeID INTEGER,BonusAmount REAL 
+CHECK (BonusAmount>0),BonusDate DATE,Reason TEXT NOT NULL,FOREIGN KEY(EmployeeID) REFERENCES Employees(EmployeeID));
 ```
 
 **Output:**
 
-![Output10](output.png)
+![image](https://github.com/user-attachments/assets/f9d14f54-fbc2-4cc7-b962-43e712ef0da4)
+
 
 
 ## RESULT
