@@ -45,7 +45,7 @@ Design a database for patient management, appointments, medical records, and bil
    - Why you chose the entities and relationships.
    - How you modeled prerequisites or billing.
 
-# ER Diagram Submission - Student Name
+# ER Diagram Submission - Masina Sree Karsh
 
 ## Scenario Chosen:
 University
@@ -80,4 +80,4 @@ In the ER diagram, prerequisites are modeled using a separate entity named *Prer
 Entities like *Student, **Course, **Department, and **Professor* were chosen to represent key academic elements. Relationships such as *Enrollment* and *Taught by* show real-world interactions. *Prerequisite* was modeled separately to handle multiple prerequisites per course. A many-to-many relationship was used for enrollment to reflect real scenarios. We assumed each student belongs to a department, and not all courses need prerequisites. These choices ensure a clear, flexible, and normalized design.
 
 ## RESULT
-Thus, the ER Diagram for university databse is developed successfully.
+Thus, the ER Diagram for university databse is successfully developed.
