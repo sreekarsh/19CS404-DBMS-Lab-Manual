@@ -58,6 +58,7 @@ from customer;
 ```
 
 **Output:**
+
 ![image](https://github.com/user-attachments/assets/515e110f-135c-44cd-8088-4de2ece3390c)
 
 
@@ -84,6 +85,8 @@ group by EmailDomain;
 ```
 
 **Output:**
+
+
 ![image](https://github.com/user-attachments/assets/4da63f66-53d1-4cd7-b990-39ba4b8ede6d)
 
 
@@ -97,6 +100,8 @@ having MAX(income)>2000000;
 ```
 
 **Output:**
+
+
 ![image](https://github.com/user-attachments/assets/27c85f23-a05b-4a45-b116-68c61d4e4197)
 
 
