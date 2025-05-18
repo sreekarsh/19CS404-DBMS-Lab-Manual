@@ -62,6 +62,8 @@ where c.cust_name ='Fabian Johns';
 ```
 
 **Output:**
+
+
 ![image](https://github.com/user-attachments/assets/ecab3803-ce5c-4a03-86bb-90523192ce59)
 
 
@@ -75,6 +77,8 @@ where c.grade<=100;
 ```
 
 **Output:**
+
+
 ![image](https://github.com/user-attachments/assets/5ff4c305-06be-49c3-b14b-64f93c6dda21)
 
 
@@ -90,6 +94,8 @@ where o.purch_amt<100;
 ```
 
 **Output:**
+
+
 ![image](https://github.com/user-attachments/assets/642817f5-9d74-434f-b052-fa3a9280fe2f)
 
 
@@ -135,6 +141,7 @@ where t.test_name='X-Ray' and t.result='Normal';
 
 **Output:**
 
+
 ![image](https://github.com/user-attachments/assets/d1d00087-777c-403c-ac2a-d36d17b0988f)
 
 
@@ -149,6 +156,7 @@ where o.purch_amt between 500 and 2000;
 ```
 
 **Output:**
+
 ![image](https://github.com/user-attachments/assets/6f8cb0a1-b756-4622-b6c0-02bc0cd82064)
 
 
@@ -177,6 +185,7 @@ where p.discharge_date IS NULL;
 ```
 
 **Output:**
+
 ![image](https://github.com/user-attachments/assets/db567179-a59e-4b49-b3f4-ec2d4a6455ce)
 
 
@@ -191,6 +200,7 @@ join salesman s on o.salesman_id=s.salesman_id;
 ```
 
 **Output:**
+
 ![image](https://github.com/user-attachments/assets/d31199f5-e4dd-4004-bedc-15f12aea82ef)
 
 
